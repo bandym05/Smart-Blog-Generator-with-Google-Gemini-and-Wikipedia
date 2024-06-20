@@ -47,8 +47,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/yourrepository.git
-cd yourrepository
+git clone https://github.com/bandym05/Smart-Blog-Generator-with-Google-Gemini-and-Wikipedia.git
+cd Smart-Blog-Generator-with-Google-Gemini-and-Wikipedia
 ```
 
 ### Set Up Virtual Environment
