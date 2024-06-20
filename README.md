@@ -7,7 +7,7 @@ Photo by <a href="https://unsplash.com/@growtika?utm_content=creditCopyText&utm_
 This solution utilizes the Gemini API and Wikipedia to automatically generate a blog post based
 on a given topic.
 
-Several processes are automatically initiated as you type your blog title in the Blog Generator Input Field, to get the full blog post out. To begin with, the scripting system employs the LangChain to search on Wikipedia and pull out a brief description or summary of the topic. It also assists in doing a summary which will give a basic understanding of a blog and its essential issues.
+Several processes are automatically initiated as you type your blog title in the Blog Generator Input Field, to get the full blog post out. To begin with, the scripting system employs a factual search on Wikipedia and pull out a brief description or summary of the topic. It also assists in doing a summary which will give a basic understanding of a blog and its essential issues.
 
 Then, specific Google Generative AI models are used to create various segments of the blog post. The generative model is initiated and employed as a basis for the generation of simple and more comprehensive heading related with the blog topic. After it, a catchy heading to come up with an interesting introduction that would surely hook the readers and the tone to the blog is set.
 
