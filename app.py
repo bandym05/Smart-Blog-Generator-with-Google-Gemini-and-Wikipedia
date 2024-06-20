@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import WikipediaLoader
-from google.colab import userdata
 import google.generativeai as genai
+import os
 
 app = Flask(__name__)
-api_key = userdata.get('GEMINI_API_KEY')
+
+# Set your API key in your environment variables for security
+api_key = os.getenv('GEMINI_API_KEY')
+if not api_key:
+    raise ValueError("GEMINI_API_KEY is not set. Please set it in your environment variables.")
+
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-pro')
 
