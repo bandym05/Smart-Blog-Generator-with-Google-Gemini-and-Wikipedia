@@ -1,4 +1,4 @@
-# Blog-Generator-System-Using-Google-Gemini
+# Smart Blog Generator with Google Gemini and Wikipedia
 
 This solution utilizes the Gemini API and Wikipedia to automatically generate a blog post based
 on a given topic.
@@ -25,7 +25,163 @@ sources.
 general writing style. Customization options for tailoring the tone and style to specific
 requirements could be beneficial.
 
-## Installation and Usage:
+## Flask Application Installation and Usage:
+
+### Prerequisites
+
+1. **Python 3.7+**
+2. **Pip (Python package installer)**
+3. **Git**
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/yourrepository.git
+cd yourrepository
+```
+
+### Set Up Virtual Environment
+
+It's a good practice to use a virtual environment to manage your dependencies.
+
+#### On Unix-based systems (Linux, macOS)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### On Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Install Dependencies
+
+Install the required Python packages using `pip`.
+
+```bash
+pip install -r requirements.txt
+```
+
+### Get Your Own Gemini API Key
+
+1. **Sign up for access to the Google Gemini API**: Visit the [Google Gemini API website](https://ai.google.dev/aistudio) and sign up for an API key.
+2. **Copy the API key**: Once you have signed up, you will receive an API key.
+
+### Set Up Environment Variables
+
+You need to set your Gemini API key as an environment variable. This can be done in a few different ways:
+
+#### Method 1: Using the Command Line (Temporary)
+
+This method sets the environment variable for the duration of the terminal session.
+
+##### On Unix-based systems (Linux, macOS)
+
+```bash
+export GEMINI_API_KEY=your_actual_api_key
+python app.py
+```
+
+##### On Windows
+
+```cmd
+set GEMINI_API_KEY=your_actual_api_key
+python app.py
+```
+
+#### Method 2: Using a `.env` File (Recommended for Local Development)
+
+1. **Install `python-dotenv`** (if not already installed):
+
+   ```bash
+   pip install python-dotenv
+   ```
+
+2. **Create a `.env` file** in the root of your project and add your API key:
+
+   ```
+   GEMINI_API_KEY=your_actual_api_key
+   ```
+
+3. **Modify your `app.py` to load the `.env` file**:
+
+   ```python
+   from flask import Flask, render_template, request
+   from langchain_community.document_loaders import WikipediaLoader
+   import google.generativeai as genai
+   from dotenv import load_dotenv
+   import os
+
+   load_dotenv()  # Load environment variables from .env file
+
+   app = Flask(__name__)
+
+   api_key = os.getenv('GEMINI_API_KEY')
+   if not api_key:
+       raise ValueError("GEMINI_API_KEY is not set. Please set it in your .env file.")
+
+   genai.configure(api_key=api_key)
+   model = genai.GenerativeModel('gemini-pro')
+
+   @app.route('/')
+   def home():
+       return render_template('index.html')
+
+   @app.route('/generate', methods=['POST'])
+   def generate():
+       topic = request.form['title']
+       
+       # Research the topic using Wikipedia
+       wiki_loader = WikipediaLoader(query=topic, load_max_docs=1)
+       wiki_summary = wiki_loader.load()[0].page_content[:200]  # Truncate summary
+
+       # Generating blog sections using the Gemini API
+       heading = model.generate_content(
+           "Generate a clear and concise heading for a blog about " + topic
+       ).text.strip()
+
+       introduction = model.generate_content(
+           "Write an engaging introduction to a blog about " + topic
+       ).text.strip()
+
+       content = model.generate_content(
+           "Create detailed and informative content for a blog about "
+           + topic + ". Include relevant facts and figures, and cite sources where necessary. Summarize the key points from the provided Wikipedia summary: "
+           + wiki_summary
+       ).text.strip()
+
+       summary = model.generate_content(
+           "Summarize the main points covered in the blog about " + topic
+       ).text.strip()
+
+       return render_template('blog.html', heading=heading, introduction=introduction, content=content, summary=summary)
+
+   if __name__ == '__main__':
+       app.run()
+   ```
+
+### Running the Application
+
+After setting the environment variables, you can run the application using:
+
+```bash
+python app.py
+```
+
+### Accessing the Application
+
+Open your web browser and navigate to `http://127.0.0.1:5000` to access the application.
+
+
+## Running the colab notebook
 
 **Prerequisites:**
 
@@ -69,3 +225,11 @@ be printed.
 installed in your Colab environment before running the code.
 - Consider exploring the capabilities of the Gemini API and Wikipedia to further
 customize the blog post generation process.
+
+## Contributing
+
+If you would like to contribute to this project, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
