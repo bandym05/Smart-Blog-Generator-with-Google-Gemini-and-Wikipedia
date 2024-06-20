@@ -1,0 +1,3 @@
+Flask
+langchain-community
+google-generativeai
