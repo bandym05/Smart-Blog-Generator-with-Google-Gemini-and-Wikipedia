@@ -1,5 +1,9 @@
 # Smart Blog Generator with Google Gemini and Wikipedia
 
+![growtika-nGoCBxiaRO0-unsplash](https://github.com/bandym05/Smart-Blog-Generator-with-Google-Gemini-and-Wikipedia/assets/58115126/75614be4-ea99-42de-b185-5e2d1a11345e)
+
+Photo by <a href="https://unsplash.com/@growtika?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Growtika</a> on <a href="https://unsplash.com/photos/an-abstract-image-of-a-sphere-with-dots-and-lines-nGoCBxiaRO0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 This solution utilizes the Gemini API and Wikipedia to automatically generate a blog post based
 on a given topic.
 
@@ -11,6 +15,9 @@ The generative model also searches for detailed and much information to post on 
 The last step is to use the generative model to learn how to sum up in the knowledge of the points that the blog has highlighted. This conclusion gives a brief idea of the most essential points that can be found in the blog.
 
 Once all the sections are generated, these are the heading, introduction, content and summary which are contained within a dictionary. Hence, you can then easily mobilize these sections whenever needed, for instance to print to the console or as part of a blog post template, depending on the specific context. This process enables you to come up with a blog post within the shortest time possible and be assured that it provides informative content on the topic that you have settled on.
+
+![Blogger](https://github.com/bandym05/Smart-Blog-Generator-with-Google-Gemini-and-Wikipedia/assets/58115126/d03bd5b8-b2cb-4730-b66d-678f1cbf7f92)
+
 
 ## Functionality:
 - Generates a clear and concise heading, engaging introduction, detailed content, and
