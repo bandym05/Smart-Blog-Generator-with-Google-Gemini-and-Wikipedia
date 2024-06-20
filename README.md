@@ -1,7 +1,16 @@
 # Blog-Generator-System-Using-Google-Gemini
 
-This solution utilizes the Gemini API, Langchain and Wikipedia to automatically generate a blog post based
+This solution utilizes the Gemini API and Wikipedia to automatically generate a blog post based
 on a given topic.
+
+Several processes are automatically initiated as you type your blog title in the Blog Generator Input Field, to get the full blog post out. To begin with, the scripting system employs the LangChain to search on Wikipedia and pull out a brief description or summary of the topic. It also assists in doing a summary which will give a basic understanding of a blog and its essential issues.
+
+Then, specific Google Generative AI models are used to create various segments of the blog post. The generative model is initiated and employed as a basis for the generation of simple and more comprehensive heading related with the blog topic. After it, a catchy heading to come up with an interesting introduction that would surely hook the readers and the tone to the blog is set.
+
+The generative model also searches for detailed and much information to post on the blog. This content entails factual information, statistics/quantitative information, and related information sourced from reliable literature and within the given topic. Please make sure that all created blog posts are informative and cover a wide range of topics.
+The last step is to use the generative model to learn how to sum up in the knowledge of the points that the blog has highlighted. This conclusion gives a brief idea of the most essential points that can be found in the blog.
+
+Once all the sections are generated, these are the heading, introduction, content and summary which are contained within a dictionary. Hence, you can then easily mobilize these sections whenever needed, for instance to print to the console or as part of a blog post template, depending on the specific context. This process enables you to come up with a blog post within the shortest time possible and be assured that it provides informative content on the topic that you have settled on.
 
 ## Functionality:
 - Generates a clear and concise heading, engaging introduction, detailed content, and
