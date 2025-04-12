@@ -1,6 +1,7 @@
 # Smart Blog Generator with Google Gemini and Wikipedia
 
-![growtika-nGoCBxiaRO0-unsplash](https://github.com/bandym05/Smart-Blog-Generator-with-Google-Gemini-and-Wikipedia/assets/58115126/75614be4-ea99-42de-b185-5e2d1a11345e)
+![geminiblog](https://github.com/user-attachments/assets/42206b1e-9afd-4217-bdf1-81b482879896)
+
 
 Photo by <a href="https://unsplash.com/@growtika?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Growtika</a> on <a href="https://unsplash.com/photos/an-abstract-image-of-a-sphere-with-dots-and-lines-nGoCBxiaRO0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
