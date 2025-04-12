@@ -3,8 +3,6 @@
 ![geminiblog](https://github.com/user-attachments/assets/42206b1e-9afd-4217-bdf1-81b482879896)
 
 
-Photo by <a href="https://unsplash.com/@growtika?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Growtika</a> on <a href="https://unsplash.com/photos/an-abstract-image-of-a-sphere-with-dots-and-lines-nGoCBxiaRO0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
 This solution utilizes the Gemini API and Wikipedia to automatically generate a blog post based
 on a given topic.
 
@@ -16,8 +14,6 @@ The generative model also searches for detailed and much information to post on 
 The last step is to use the generative model to learn how to sum up in the knowledge of the points that the blog has highlighted. This conclusion gives a brief idea of the most essential points that can be found in the blog.
 
 Once all the sections are generated, these are the heading, introduction, content and summary which are contained within a dictionary. Hence, you can then easily mobilize these sections whenever needed, for instance to print to the console or as part of a blog post template, depending on the specific context. This process enables you to come up with a blog post within the shortest time possible and be assured that it provides informative content on the topic that you have settled on.
-
-![geminiblog](https://github.com/user-attachments/assets/1141c9d7-8446-4166-bebd-99925af17ec1)
 
 
 
