@@ -16,7 +16,8 @@ The last step is to use the generative model to learn how to sum up in the knowl
 
 Once all the sections are generated, these are the heading, introduction, content and summary which are contained within a dictionary. Hence, you can then easily mobilize these sections whenever needed, for instance to print to the console or as part of a blog post template, depending on the specific context. This process enables you to come up with a blog post within the shortest time possible and be assured that it provides informative content on the topic that you have settled on.
 
-![Blogger](https://github.com/bandym05/Smart-Blog-Generator-with-Google-Gemini-and-Wikipedia/assets/58115126/d03bd5b8-b2cb-4730-b66d-678f1cbf7f92)
+![geminiblog](https://github.com/user-attachments/assets/1141c9d7-8446-4166-bebd-99925af17ec1)
+
 
 
 ## Functionality:
