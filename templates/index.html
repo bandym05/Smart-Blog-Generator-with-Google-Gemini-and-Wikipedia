@@ -1,62 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Blog Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoBlog Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --accent-color: #0ff;
+            --background: radial-gradient(circle at center, #1a1a2e 0%, #16213e 100%);
+        }
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: var(--background);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
         .container {
+            position: relative;
+            width: 90%;
             max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 50px;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary-gradient);
+            z-index: -1;
+            transform: translateZ(-1px);
+            opacity: 0.15;
+            border-radius: inherit;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
         }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
+        .input-group {
+            position: relative;
+            margin-bottom: 2rem;
         }
 
-        input[type="text"] {
+        input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary-gradient);
             border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         button:hover {
-            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 242, 254, 0.4);
+        }
+
+        .floating-shapes div {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(10vw, 10vh); }
+            50% { transform: translate(-5vw, 15vh); }
+            75% { transform: translate(-10vw, -5vh); }
+        }
+
+        .floating-shapes div:nth-child(1) {
+            background: rgba(0, 242, 254, 0.4);
+            top: 20%;
+            left: 10%;
+        }
+
+        .floating-shapes div:nth-child(2) {
+            background: rgba(79, 172, 254, 0.4);
+            top: 60%;
+            right: 15%;
         }
     </style>
 </head>
 <body>
+    <div class="floating-shapes">
+        <div></div>
+        <div></div>
+    </div>
+    
     <div class="container">
-        <h1>Blog Generator</h1>
+        <h1>Smart Blog Generator</h1>
         <form action="/generate" method="post">
-            <label for="title">Enter Blog Title:</label>
-            <input type="text" id="title" name="title" required>
-            <button type="submit">Generate Blog</button>
+            <div class="input-group">
+                <input type="text" id="title" name="title" required 
+                       placeholder="Enter your blog title...">
+            </div>
+            <button type="submit">Generate Post</button>
         </form>
     </div>
 </body>
